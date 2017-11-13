@@ -6,7 +6,7 @@ import re
 import subprocess
 
 p = re.compile('inet .+?[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+')
-ip_msg = p.findall(subprocess.check_output('ifconfig').decode('utf-8'))
+ip_msg = p.findall(subprocess.check_output('/sbin/ifconfig').decode('utf-8'))
 msg = ''
 for i in ip_msg:
     msg += (i + '  ')
